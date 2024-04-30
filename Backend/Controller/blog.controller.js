@@ -1,13 +1,10 @@
 import Blog from "../models/blog.model.js";
-
+import express from "express";
+const router=express.Router();
 const blog = async (req, res, next) => {
     
     try {
-        // Ensure user is authenticated
-        // if (!req.user) {
-        //     return res.status(401).json({ error: "Unauthorized: User not logged in" });
-        // }
-        // console.log(req.user._id);
+       
         const { Name, image, content,author } = req.body;
         // const authorId = req.user._id;
         console.log(Name+" "+image+" "+content+" " +author)

@@ -14,12 +14,15 @@ import UpgradePlan from './Pages/UpgradePlan';
 import Payment from "./Pages/Payment";
 import Cancel from "./Pages/Cancel"
 import Success from "./Pages/Success";
+import ShowBlogs from './Pages/ShowBlogs';
+
 
 function App() {
   
   return (
     <div>
       <Router>
+      {/* <Header/> */}
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/blog' element={<Blog/>}/>
@@ -34,6 +37,8 @@ function App() {
           <Route path='/pay' element={<Payment/>} ></Route>
           <Route path='/success' element={<Success/>} ></Route>
           <Route path='/cancel' element={<Cancel/>} ></Route>
+          <Route path='/showblog' element={<ShowBlogs/>} ></Route>
+          <Route path='/addBlog' element={<Blog/>}></Route>
         </Routes>
       </Router>
     </div>

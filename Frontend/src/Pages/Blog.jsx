@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
+import Header from "../Component/Header"
 
 function Blog() {
   const [userId, setUserId] = useState('');
@@ -7,8 +9,9 @@ function Blog() {
     Name: '',
     image: '',
     content: '',
-    author: userId // Set author to userId
+    author: '' // Do not set author to userId initially
   });
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Retrieve user's ID from local storage
@@ -33,7 +36,7 @@ function Blog() {
       // Include userId in formData
       const dataWithAuthor = {
         ...formData,
-        author: userId
+        author: userId // Set author to userId when creating the blog
       };
 
       const response = await fetch('http://localhost:8080/api/blog/blogs', {
@@ -46,8 +49,15 @@ function Blog() {
 
       if (response.ok) {
         console.log('Blog post created successfully');
-        console.log(userId);
+        console.log(dataWithAuthor);
+
+        // Store the created blog in localStorage
+        const storedBlogs = JSON.parse(localStorage.getItem('blogs')) || [];
+        const updatedBlogs = [...storedBlogs, dataWithAuthor];
+        localStorage.setItem('blogs', JSON.stringify(updatedBlogs));
+
         // Optionally, redirect the user or show a success message
+        navigate('/showblog')
       } else {
         console.error('Failed to create blog post');
         // Handle errors
@@ -60,7 +70,15 @@ function Blog() {
 
   return (
     <div>
-      <h1>Blog</h1>
+      <Header/>
+      <h1>
+        <ul style={{display:'flex '}}>
+          <li >INSPIRING </li>
+          <li> EDUCATORSNEWSSCHOOL </li>
+          <li> STORIESTEACHING </li>
+          <li> TRENDS</li>
+        </ul>
+      </h1>
       {userId !== '' ? ( // Conditionally render the form based on login status
         <form onSubmit={handleSubmit}>
           <input type="text" id="Name" placeholder="Name" value={formData.Name} onChange={handleChange} />

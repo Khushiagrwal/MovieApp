@@ -32,7 +32,8 @@ const io = new Server(httpServer, {
 // Middleware
 app.use(express.json());
 app.use(cors({
-    origin: 'http://localhost:5173'
+    origin: 'http://localhost:5173',
+     methods: ["GET", "POST"]
 }));
 
 // Socket.IO connection handling
@@ -53,18 +54,6 @@ io.on('connection', (socket) => {
 app.use('/api/user', userRoute);
 app.use('/api/auth', userAuth);
 app.use('/api/blog',blogRoute);
-// app.post("/api/create-checkout-session", async (req, res) => {
-//     const { amount } = req.body;
-//     console.log(amount); 
-//     const session = await stripe.checkout.sessions.create({
-//         payment_method_types:["card"],
-//         line_items:amount,
-//         mode:"payment",
-//         success_url:"http://localhost:5173/success",
-//         cancel_url:"http://localhost:5173/cancel",
-//     });
-//     res.json({id:session.id});
-// });
 
 app.post("/api/create-checkout-session", async (req, res) => {
     const { amount } = req.body;

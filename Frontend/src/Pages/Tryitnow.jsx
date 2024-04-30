@@ -3,6 +3,7 @@ import { fabric } from 'fabric';
 import io from 'socket.io-client';
 import "../../public/Css/style.css";
 import { useNavigate } from 'react-router-dom';
+import  Header from '../Component/Header';
 
 
 const socket = io('http://localhost:8080'); // Corrected server URL
@@ -115,7 +116,9 @@ function Tryitnow() {
     navigate('/upgrade');
   }; 
   return (
+
     <div className="canvas-container">
+      <Header/>
       <h1>CANVAS DRAWING</h1>
       <div className="canvas-controls">
         <button onClick={handleToggleDrawingMode}>
@@ -140,6 +143,7 @@ function Tryitnow() {
       )}
       </div>
       <canvas id="c" width="800" height="600"></canvas>
+      {/* <Footer/>  */}
     </div>
   );
 }
