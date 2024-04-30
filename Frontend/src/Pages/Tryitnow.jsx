@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { fabric } from 'fabric';
 import io from 'socket.io-client';
 import "../../public/Css/style.css";
+import { useNavigate } from 'react-router-dom';
+
 
 const socket = io('http://localhost:8080'); // Corrected server URL
 
 function Tryitnow() {
+  const navigate=useNavigate();
   const [canvas, setCanvas] = useState(null);
   const [isDrawingMode, setIsDrawingMode] = useState(false);
   const [isEraserMode, setIsEraserMode] = useState(false);
@@ -109,6 +112,7 @@ function Tryitnow() {
     // Here you can implement logic for handling the purchase,
     // such as integrating with a payment gateway and updating user's pro status
     setIsProUser(true); // For demonstration purpose, setting user as pro
+    navigate('/upgrade');
   }; 
   return (
     <div className="canvas-container">

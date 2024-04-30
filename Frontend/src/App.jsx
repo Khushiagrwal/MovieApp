@@ -9,6 +9,11 @@ import Resouces from './Pages/Resouces'
 import Tryitnow from './Pages/Tryitnow'
 import Home from './Pages/Home'
 import Logout from './Pages/Logout';
+import Upgrade from './Pages/Upgrade';
+import UpgradePlan from './Pages/UpgradePlan';
+import Payment from "./Pages/Payment";
+import Cancel from "./Pages/Cancel"
+import Success from "./Pages/Success";
 
 function App() {
   
@@ -24,6 +29,11 @@ function App() {
           <Route path='/login' element={<Signin/>}/>
           <Route path='/logout' element={<Logout/>}/>
           <Route path='/try' element={<Tryitnow/>}></Route>
+          <Route path='/upgrade' element={<Upgrade/>}></Route>
+          <Route path='/upgradeplans' element={<UpgradePlan/>}></Route>
+          <Route path='/pay' element={<Payment/>} ></Route>
+          <Route path='/success' element={<Success/>} ></Route>
+          <Route path='/cancel' element={<Cancel/>} ></Route>
         </Routes>
       </Router>
     </div>

@@ -6,7 +6,7 @@ import cors from "cors";
 import { createServer } from "http";
 import { Server } from 'socket.io';
 import blogRoute from "./Routes/blog.route.js"
-
+import Stripe from "stripe";
 
 
 // Connect to MongoDB
@@ -19,6 +19,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/whiteboard_')
     }
 );
 
+const stripe = Stripe("sk_test_51P9W2LSBfqHF6tBnzH6XrDwa8kkXJnGicVMARVxfcGXvgv2MePMa36JpVfEkryvmGloIOPyoalLxKxmEZJucd58S00RjebhdE9");
 const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
@@ -52,8 +53,41 @@ io.on('connection', (socket) => {
 app.use('/api/user', userRoute);
 app.use('/api/auth', userAuth);
 app.use('/api/blog',blogRoute);
+// app.post("/api/create-checkout-session", async (req, res) => {
+//     const { amount } = req.body;
+//     console.log(amount); 
+//     const session = await stripe.checkout.sessions.create({
+//         payment_method_types:["card"],
+//         line_items:amount,
+//         mode:"payment",
+//         success_url:"http://localhost:5173/success",
+//         cancel_url:"http://localhost:5173/cancel",
+//     });
+//     res.json({id:session.id});
+// });
 
-
+app.post("/api/create-checkout-session", async (req, res) => {
+    const { amount } = req.body;
+    console.log(amount); 
+    const session = await stripe.checkout.sessions.create({
+        payment_method_types: ["card"],
+        line_items: [{
+            price_data: {
+                currency: 'inr',
+                product_data: {
+                    name: 'Subscription',
+                },
+                unit_amount: amount * 100, // converting amount to cents
+            },
+            quantity: 1,
+        }],
+        mode: "payment",
+        success_url: "http://localhost:5173/success",
+        cancel_url: "http://localhost:5173/cancel",
+    });
+    res.json({ id: session.id });
+});
+ 
 // Error handling middleware
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500;
