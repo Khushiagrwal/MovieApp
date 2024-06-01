@@ -1,21 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../Component/Header';
+import SearchBox from '../Component/SearchBox';
+import "../../public/Css/style.css"; // Import the CSS file
 
 function Home() {
   const userId = localStorage.getItem('userId');
 
   return (
-    <div>
+    <div className="home-container">
       <Header />
-      <h1>Home</h1>
-      <br />
-      {/* Conditionally render the Link based on userId */}
+      <div className="home-header">
+        <h1>Welcome to Movie Search</h1>
+      </div>
       {userId == null ? (
-        <button>
-          <Link to='/login'>START FOR FREE</Link>
-        </button>
-      ) : null}
+        <Link to='/signup' className="home-button">SIGN UP</Link>
+      ) : (
+        <div className="search-box-container">
+          <SearchBox />
+        </div>
+      )}
     </div>
   );
 }
