@@ -9,12 +9,10 @@ import SearchBox from './Component/SearchBox';
 import Watchlist from './Component/Watchlist';
 import { WatchlistProvider } from './Pages/WatchlistContext';
 
-
 function App() {
   return (
     <WatchlistProvider>
       <Router>
-        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
@@ -22,6 +20,7 @@ function App() {
           <Route path="/logout" element={<Logout />} />
           <Route path="/search" element={<SearchBox />} />
           <Route path="/watchlist" element={<Watchlist />} />
+
         </Routes>
       </Router>
     </WatchlistProvider>

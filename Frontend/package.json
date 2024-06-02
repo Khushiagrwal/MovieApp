@@ -12,11 +12,14 @@
   "dependencies": {
     "@stripe/react-stripe-js": "^2.7.0",
     "axios": "^1.6.8",
+    "bootstrap": "^5.3.3",
     "fabric": "^5.3.0",
     "firebase": "^10.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.2",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
     "socket.io-client": "^4.7.4"
   },
   "devDependencies": {
