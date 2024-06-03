@@ -402,24 +402,49 @@ button[type="submit"]:hover {
 }
 
 /* home.css */
-.card {
+.card, .movie-card{
   display: flex;
   flex-wrap: wrap;  /* Allows items to wrap to the next line if necessary */
   gap:10px;  /* Adds space between the columns */
   flex-direction: row;  /* Ensures the items are arranged in a row */
-  background-color: black;
+  margin-bottom: 2px;
+  margin-top: 80px;
+  margin-left: 20px;
+  margin-right: 12px;
+  background-color: #00000000;
 }
-
+.home-container
+{
+  background-image: url('https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  height:1000px;
+  
+}
 .card ol {
-  background-color: rgba(255, 255, 255, 0.8);  /* Slightly transparent white background */
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
-  flex: 1 1 calc(33.333% - 40px);  /* Three columns with equal width */
-  width:170px;  /* Minimum width for each column */
-  margin: 5px;  /* Margin to separate the columns */
-  background-color: white;
+  color: white;
+  width: 20%;
+  width:350px; 
+  margin:10px;
 }
+.movie-card{
+  background-color: #000;
+  margin-top: 30px;
+  margin-bottom: 1px;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+.img-ol{
+  display: flex;
+  height:300px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 150px;
+  gap:10px;
+  border-radius:2px;
+  justify-content: center;
+}
+.img-ol:hover{
 
+}
 li {
   margin-left: 10px;
   margin-right: 10px;
@@ -433,21 +458,24 @@ li:hover{
   margin-bottom: 10px;
 }
 /* Other existing CSS rules */
-
+.movie-ol{
+  list-style: none;
+}
 .slide {
-  background-image: url('https://images.unsplash.com/photo-1497015289639-54688650d173?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bW92aWUlMjB3ZWJzaXRlfGVufDB8fDB8fHww'); /* Replace with your image path */
+  
   background-size: cover;     /* Ensures the image covers the whole container */
   background-repeat: no-repeat; /* Prevents the image from repeating */
   background-position: center; /* Centers the image */
   padding: 20px;              /* Adds padding around the slider */  
   height: 500px;
   width: 97%;   
+  margin-top: 30px;
   margin-left:25px;
   margin-right: 10px;  /* Optional: Adds rounded corners to the container */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds subtle shadow */
 }
 .slider-image {
-  width: 700px;
+  width: 500px;
   height: 360px;
   border-radius: 10px; /* Optional: Adds rounded corners to the images */
   display: block;
@@ -457,8 +485,10 @@ li:hover{
 h3{
   color: white;
 }
+
 hr {
-  border-color:white; /* Replace #ff0000 with your desired color code */
+  height: 5px; /* Adjust the value to increase or decrease the height */
+  background-color: white /* Optional: Set the color of the line */
 }
 
 /* signin.css */
@@ -852,4 +882,55 @@ hr {
 
 .movie-info img {
   display: none; /* Hide the image element */
+}
+/* Basic CSS for footer component */
+.footer {
+  background-color: black;
+ 
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+  padding: 10px;
+}
+
+h4 {
+  align-items: center;
+  color: #6c757d;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 8px;
+  
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+.watch{
+  height: 30px;
+  width: 30px;
+  margin-right: 100px;
 }

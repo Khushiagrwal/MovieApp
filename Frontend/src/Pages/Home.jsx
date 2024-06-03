@@ -10,6 +10,10 @@
   import m3 from "../../public/Images/movie3.jpg";
   import m4 from "../../public/Images/movie4.jpg";
   import m5 from "../../public/Images/movie5.jpg";
+  import m8 from "../../public/Images/movie8.jpg";
+  import m9 from "../../public/Images/movie9.jpg";
+  import m10 from "../../public/Images/movie10.jpg";
+  
 import Footer from '../Component/Footer';
 
   function Home() {
@@ -27,8 +31,8 @@ import Footer from '../Component/Footer';
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      autoplay: true,         // Enable automatic sliding
-      autoplaySpeed: 2000,    // Slide every 3 seconds
+      autoplay: true,         
+      autoplaySpeed: 2000,   
     };
 
     return (
@@ -47,7 +51,7 @@ import Footer from '../Component/Footer';
           </Slider>
         </div>
         <div className='card'>
-          <ol>
+          <ol >
             <h5>Top Movies</h5>
             <hr />
             <li>Kingdom of the Planet of the Apes</li>
@@ -67,12 +71,33 @@ import Footer from '../Component/Footer';
           <ol>
             <h5>Just Added</h5>
             <hr />
-            <li>Kingdom of the Planet of the Apes</li>
             <li>Civil War</li>
-            <li>Atlas</li>
-            <li>Tarot</li>
+            <li>Furiosa: A Mad Max Saga</li>
             <li>The Garfield Movie</li>
+            <li>Inside Out 2</li>
+            <li>Challengers</li>
           </ol>
+        </div>
+        <div className='movie-card'>
+          <ol className='movie-ol'>
+            <li><img className='img-ol' src={m10} alt="" /></li>
+          </ol>
+          <ol className='movie-ol'>
+            <li><img className='img-ol' src={m8} alt="" /></li>
+          </ol>
+          <ol className='movie-ol'>
+            <li><img className='img-ol' src={m9} alt="" /></li>
+          </ol>
+          <ol className='movie-ol'>
+            <li><img className='img-ol' src={m1} alt="" /></li>
+          </ol>
+          <ol className='movie-ol'>
+            <li><img className='img-ol' src={m2} alt="" /></li>
+          </ol>
+
+        </div>
+        <div>
+          
         </div>
         <Footer/>
       </div>

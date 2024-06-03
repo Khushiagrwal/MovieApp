@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../public/Images/logo.png';
 import '../../public/Css/style.css';
+import Watch from '../../public/Images/tag.png';
 
 function Header() {
   const userId = localStorage.getItem('userId');
@@ -42,11 +43,10 @@ function Header() {
             {userId && (
               <>
                 <li className="nav-item">
-                  <Link to="/watchlist" className="nav-link">Watchlist</Link>
-                </li>
-                
-                <li className="nav-item">
                   <Link to="" onClick={handleLogout} className="nav-link">Logout</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/watchlist" className="nav-link"><img src={Watch} alt="Logo" className="watch" /></Link>
                 </li>
               </>
             )}
