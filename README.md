@@ -1,8 +1,31 @@
 # Movie Application 
 ## Description
 This movie application utilizes the OMDB API to fetch movie information. Users can sign up and sign in to the application to add movies to their watchlist. The application provides a search bar to look for specific movies and view their details. When a user clicks "Add to Watchlist", a pop-up will appear to confirm the action.
-<img align="right" alt="coding" width="400" src="https://bestgifs.makeagif.com/wp-content/uploads/2016/06/movie.gif">
-
+<br>
+<img align="center" alt="coding" width="400" src="https://bestgifs.makeagif.com/wp-content/uploads/2016/06/movie.gif">
+<br>
+  <h3 style="text-align: center;">Home Page</h3>
+  <img src="./Frontend/gif_movie/Screenshot (664).png" align="center" alt="coding" width="600" border-radius: 5px;">
+  <br>
+  <img src="./Frontend/gif_movie/Screenshot (665).png" align="center" alt="coding" width="600" border-radius: 5px;">
+  <br>
+  <h3 style="text-align: center;">Footer</h3>
+  <img src="./Frontend/gif_movie/Screenshot (666).png" align="center" alt="coding" width="600" border-radius: 5px;">
+  <br>
+  <h3 style="text-align: center;">Signup Page</h3>
+  <img src="./Frontend/gif_movie/Screenshot (676).png" align="center" alt="coding" width="600" border-radius: 5px;">
+  <br>
+  <h3 style="text-align: center;">Signin Page</h3>
+  <img src="./Frontend/gif_movie/Screenshot (676).png" align="center" alt="coding" width="600" border-radius: 5px;">
+  <br>
+  <h3 style="text-align: center;">Search Page</h3>
+  <img src="./Frontend/gif_movie/Screenshot (670).png" align="center" alt="coding" width="600" border-radius: 5px;">
+  <img src="./Frontend/gif_movie/Screenshot (673).png" align="center" alt="coding" width="600" border-radius: 5px;">
+  <br>
+  <h3 style="text-align: center;">Save Page</h3>
+  <img src="./Frontend/gif_movie/Screenshot (667).png" align="center" alt="coding" width="600" border-radius: 5px;">
+  <img src="./Frontend/gif_movie/Screenshot (674).png" align="center" alt="coding" width="600" border-radius: 5px;">
+  
 ## Features
 - **User Authentication**: Users can sign up and sign in to the application.
 - **Watchlist Management**: Users can add movies to their watchlist.
