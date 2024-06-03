@@ -1,7 +1,8 @@
-# Movie Application Readme
+# Movie Application 
 ## Description
 This movie application utilizes the OMDB API to fetch movie information. Users can sign up and sign in to the application to add movies to their watchlist. The application provides a search bar to look for specific movies and view their details. When a user clicks "Add to Watchlist", a pop-up will appear to confirm the action.
-<img align="right" alt="coding" width="400" src="https://cdn.dribbble.com/users/1019864/screenshots/3079099/codeloop.gif">
+<img align="right" alt="coding" width="400" src="https://bestgifs.makeagif.com/wp-content/uploads/2016/06/movie.gif">
+
 ## Features
 - **User Authentication**: Users can sign up and sign in to the application.
 - **Watchlist Management**: Users can add movies to their watchlist.
